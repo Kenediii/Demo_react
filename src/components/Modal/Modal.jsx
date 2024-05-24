@@ -20,7 +20,21 @@ useEffect(() => {
             onClose()
         }
     }
-    document.addEventListener('keydown', hadleKeyDown)
+ document.addEventListener('keydown', hadleKeyDown)
+
+ const intervalId = setInterval(() => {
+        console.log(new Date().toLocaleTimeString());
+    }, 1000)
+
+ const timeoutId =  setTimeout(() => {
+        console.log('tadam');
+    }, 3000);
+
+    return () => {
+        document.removeEventListener('keydown', hadleKeyDown)
+        clearInterval(intervalId)
+        clearTimeout(timeoutId)
+    }
 },[onClose])
 
 
