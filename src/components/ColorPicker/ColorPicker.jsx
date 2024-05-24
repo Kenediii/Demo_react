@@ -10,9 +10,9 @@ export const ColorPicker = () =>  {
                 <div className={s.wrap}>
                     <h2  className={s.title}>Current color: {currentColor}</h2>
                     <ul className={s.list}>
-                        {colors.map(item => (
-                            <li style={{ backgroundColor: item.color }} onClick={()=> setCurrentColor(item.color)} className={s.item} key={item.id}> 
-                                {item.color}
+                        {colors.map(palette  => (
+                            <li style={{ backgroundColor: palette.color }} onClick={()=> setCurrentColor(palette.color)} className={s.item} key={palette.id}> 
+                                {palette.color}
                             </li>
                         ))}
                     </ul>
